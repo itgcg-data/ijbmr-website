@@ -45,5 +45,5 @@ window.IJBMR_ISSUES = [
 - [ ] Add your issues to `assets/issues.js`
 - [ ] Add your editorial board to `assets/board.js`
 - [ ] Confirm the policies on the Standards page (word limits, APA style, double-blind review, COPE, CC BY 4.0 licence, fees)
-- [ ] Confirm the home page claims ("Quarterly", "Double-blind", "CC BY 4.0", "Open access")
+- [ ] Confirm the home page claims ("Published annually", "Double-blind", "CC BY 4.0", "Open access")
 - [ ] Confirm the ISSN label (currently "ISSN: 1938-0429"; online or print?)
