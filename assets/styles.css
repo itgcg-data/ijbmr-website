@@ -154,28 +154,14 @@ p { margin: 0 0 var(--space-4); }
   color: var(--color-accent); font-weight: 600;
 }
 
-/* Hero banner: blue band standing in for the component's landscape image */
-.hero-banner {
-  position: relative; overflow: hidden; border-radius: var(--radius-lg);
-  background: linear-gradient(120deg, var(--color-navy) 0%, #163f7a 55%, var(--color-primary) 100%);
-  color: #fff; min-height: 260px; padding: var(--space-7);
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-5); align-items: end;
-}
-.hero-banner::before {
-  content: ""; position: absolute; inset: 0; opacity: .18; pointer-events: none;
-  background-image:
-    linear-gradient(rgba(255,255,255,.5) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,.5) 1px, transparent 1px);
-  background-size: 48px 48px;
-  mask-image: linear-gradient(to bottom, transparent 0%, #000 70%);
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 70%);
-}
-.hero-banner > * { position: relative; }
-.stat strong { display: block; font-family: var(--font-serif); font-size: 2.4rem; line-height: 1; margin-bottom: var(--space-2); }
-.stat span { font-size: .9rem; color: #dbe6ff; }
-@media (max-width: 760px) {
-  .hero-banner { grid-template-columns: repeat(2, 1fr); padding: var(--space-6) var(--space-5); min-height: 0; }
-}
+/* Logo banner + "at a glance" strip */
+.logo-banner { margin: 0; border-radius: var(--radius-lg); overflow: hidden; background: #3a3a3a; box-shadow: var(--shadow-md); }
+.logo-banner img { width: 100%; height: auto; aspect-ratio: 1536 / 640; object-fit: cover; }
+.glance { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-5); padding: var(--space-6) 0 0; }
+.glance .stat { border-left: 3px solid var(--color-primary); padding-left: var(--space-4); }
+.glance .stat strong { display: block; font-family: var(--font-serif); font-size: 1.6rem; line-height: 1.1; color: var(--color-navy); margin-bottom: var(--space-1); }
+.glance .stat span { font-size: .9rem; color: var(--color-muted-foreground); }
+@media (max-width: 760px) { .glance { grid-template-columns: repeat(2, 1fr); } }
 
 /* ---------- Page header (inner pages) ---------- */
 .page-header { padding: var(--space-8) 0 var(--space-6); border-bottom: 1px solid var(--color-border); background: linear-gradient(180deg, var(--color-primary-soft), #fff); }
