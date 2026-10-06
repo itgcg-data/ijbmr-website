@@ -2,18 +2,25 @@
 (function () {
   document.documentElement.classList.remove('no-js');
 
-  // Mobile navigation
+  // Dropdown menu next to the logo
   var toggle = document.querySelector('.nav-toggle');
-  var nav = document.getElementById('site-nav');
-  if (toggle && nav) {
-    toggle.addEventListener('click', function () {
-      var open = nav.classList.toggle('is-open');
+  var panel = document.getElementById('quick-panel');
+  if (toggle && panel) {
+    var setOpen = function (open) {
+      panel.classList.toggle('is-open', open);
       toggle.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    };
+    toggle.addEventListener('click', function (e) {
+      e.stopPropagation();
+      setOpen(!panel.classList.contains('is-open'));
+    });
+    document.addEventListener('click', function (e) {
+      if (panel.classList.contains('is-open') && !panel.contains(e.target)) setOpen(false);
     });
     document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && nav.classList.contains('is-open')) {
-        nav.classList.remove('is-open');
-        toggle.setAttribute('aria-expanded', 'false');
+      if (e.key === 'Escape' && panel.classList.contains('is-open')) {
+        setOpen(false);
         toggle.focus();
       }
     });
