@@ -69,6 +69,14 @@ p { margin: 0 0 var(--space-4); }
 }
 .skip-link:focus { top: var(--space-4); color: #fff; }
 
+/* Journal DOI (home page, top and bottom) */
+.doi-bar { background: var(--color-navy); color: #c9d6ea; font-size: .85rem; text-align: center; padding: 6px 0; overflow-wrap: anywhere; }
+.doi-bar a { color: #fff; font-weight: 700; }
+.doi-bar a:hover { color: #dbe6ff; }
+.doi-section { padding: var(--space-6) 0 0; }
+.doi-line { margin: 0; padding-top: var(--space-5); border-top: 1px solid var(--color-border); text-align: center; color: var(--color-muted-foreground); overflow-wrap: anywhere; }
+.doi-line a { font-weight: 700; }
+
 /* ---------- Header ---------- */
 .site-header {
   position: sticky; top: 0; z-index: 50;
